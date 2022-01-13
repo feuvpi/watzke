@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `got Code?`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Fred Pinheiro`,
+      summary: `passionate about nature and technology. Love to see ideas come to reality`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Here I will share some useful stuff I have been learning thought my software engineering journey.`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      //twitter: `kylemathews`,
     },
   },
   plugins: [
@@ -105,7 +105,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "Gatsby Starter Blog RSS Feed",
+            title: "feuvpi RSS Feed",
           },
         ],
       },
@@ -113,10 +113,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Fred Pinheiro`,
+        short_name: `feuvpi`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
