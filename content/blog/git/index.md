@@ -59,7 +59,7 @@ Vamos agora adicionar um arquivo .txt e verificar novamente o `git status`.
 
 ![adicionando arquivo no repositorio](./readme.png)
 
-![git status](./gitstatus2.png)
+![utilizando git status](./gitstatus2.png)
 
 Agora, apesar de o nosso arquivo Leia-me estar em branco, o `git status` nos informa de que existem arquivos no nosso repositorio com informações que ainda não estão rastreadas.
 

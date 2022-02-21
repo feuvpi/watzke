@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `got Code?`,
+    title: `Just some tech`,
     author: {
       name: `Fred Pinheiro`,
-      summary: `passionate about nature and technology. Love to see ideas come to reality`,
+      summary: `fascinated about how simple software can solve complex problems. `,
     },
     description: `Here I will share some useful stuff I have been learning thought my software engineering journey.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://feuvpi.dev`,
     social: {
-      //twitter: `kylemathews`,
+      twitter: `feuvpi`,
     },
   },
   plugins: [
