@@ -1,6 +1,6 @@
 ---
 title: Criando um loader a partir de CSS puro
-date: "2022-01-11T22:40:32.169Z"
+date: "2022-02-26T22:40:32.169Z"
 description: "Utilizando CSS puro e simples para criar belas animações de carregamento."
 ---
 
