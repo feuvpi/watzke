@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Just some tech`,
+    title: `Watzke`,
     author: {
-      name: `Fred Pinheiro`,
-      summary: `fascinated about how simple software can solve complex problems. `,
+      name: `Fred Pinheiro,`,
+      summary: `software developer and sound designer. `,
     },
     description: `Here I will share some useful stuff I have been learning thought my software engineering journey.`,
     siteUrl: `https://feuvpi.dev`,
