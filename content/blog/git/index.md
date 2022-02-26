@@ -11,15 +11,15 @@ Olá! Que tal aprender um pouco sobre como utilizar a ferramenta git para contro
 
 Primeiramente, não podemos confundir `git` e `GitHub`, são ferramentas distintas.
 
-O `git` é um projeto open-source para controle de versionamento muito utilizado por desenvolvedores e criado no ano de 2005 por Linus Tordvalds, criador do kernel do sistema operacional Linux. Sim, ao invês de manualmente salvar inumeras versões do mesmo arquivo, você pode utilizar o `git` para controlar os as alterações do seu projeto, sendo possivel com o `git` um historico de todas as alterações realizadas no projeto, com a possibilidade de retrodecer para qualquer ponto caso haja necessidade. Mais adiante veremos na pratica como isso funciona.
+O `git` é um projeto open-source para controle de versionamento muito utilizado por desenvolvedores e criado no ano de 2005 por Linus Tordvalds, criador do kernel do sistema operacional Linux. Sim, ao invés de manualmente salvar inúmeras versões do mesmo arquivo, você pode utilizar o `git` para controlar os as alterações do seu projeto, sendo possível com o `git` um histórico de todas as alterações realizadas no projeto, com a possibilidade de retroceder para qualquer ponto caso haja necessidade. Mais adiante veremos na pratica como isso funciona.
 
 Para mim uma boa forma de tentar entender o que é o `git` é pensando em pontos na historia e ramificações.
 
-Quando você inicializa o `git` em alguma pasta que você esteja trabalhando - a partir daqui chamaremos pasta de repositorio - ele te possibilita a partir da linha de comando ou usando uma GUI criar `pontos na historia` e `ramificações` do seu projeto.
+Quando você inicializa o `git` em alguma pasta que você esteja trabalhando - a partir daqui chamaremos pasta de repositório - ele te possibilita a partir da linha de comando ou usando uma GUI criar `pontos na historia` e `ramificações` do seu projeto.
 
-`Ramificações` são uma copia de todo ou parte do projeto, de modo que o desenvolvedor possa trabalhar em cima dessa copia realizando as modificações necessárias sem que isso afete os arquivos que estão no repositorio principal.
+`Ramificações` são uma copia de todo ou parte do projeto, de modo que o desenvolvedor possa trabalhar em cima dessa copia realizando as modificações necessárias sem que isso afete os arquivos que estão no repositório principal.
 
-Sempre que você realizar alterações em arquivos do seu projeto que estejam sendo monitorados pelo git, serão criados `pontos na historia`, que estarão disponiveis no log das alterações do seu projeto.
+Sempre que você realizar alterações em arquivos do seu projeto que estejam sendo monitorados pelo git, serão criados `pontos na historia`, que estarão disponíveis no log das alterações do seu projeto.
 
 > `Ramificações` (ou `branchs`) possibilitam aos desenvolvedores alterarem os arquivos do projeto de forma independente, sem que isso afete os arquivos principais. Pode-se pensar em um `branch` como sendo uma copia do diretorio em que se deseja trabalhar.
 
@@ -29,43 +29,43 @@ A seguir iremos ver como utilizar o `git` para realizar o controle de versão de
 
 ## O QUE É GITHUB
 
-`GitHub` é um serviço online de hospedagem de repositorios. Ele permite que os desenvolvedores mantenham todos os commits sincronizados entre os membros do time.
+`GitHub` é um serviço online de hospedagem de repositórios. Ele permite que os desenvolvedores mantenham todos os commits sincronizados entre os membros do time.
 
-A seguir iremos criar um repositorio local, inicializar o git no repositorio, realizar o `commit` de um arquivo e realizar o envio dos arquivos para o nosso repositorio no `GitHub`.
+A seguir iremos criar um repositório local, inicializar o git no repositório, realizar o `commit` de um arquivo e realizar o envio dos arquivos para o nosso repositório no `GitHub`.
 
 ## INSTALANDO O GITHUB
 
 Para instalar o git em sua maquina, siga as instruções em https://git-scm.com/downloads.
 
-## Inicializando o git em um repositorio local
+## Inicializando o git em um repositório local
 
-Primeiramente, iremos inicializar o git em um repositorio no qual estamos trabalhando. Utilizando a sua linha de comando: `git init`.
+Primeiramente, iremos inicializar o git em um repositório no qual estamos trabalhando. Utilizando a sua linha de comando: `git init`.
 
 ![Command Line: git init](./gitinitcmd.png)
 
-![Arquivo .git criado no repositorio](./gitinitfolder.png)
+![Arquivo .git criado no repositório](./gitinitfolder.png)
 
-Sempre que inicializamos o git em um repositorio, é criado um arquivo do tipo ".git". É nesse arquivo que ficarão armazenados todas as informações necessárias para a realização do controle de versionamento.
+Sempre que inicializamos o git em um repositório, é criado um arquivo do tipo ".git". É nesse arquivo que ficarão armazenados todas as informações necessárias para a realização do controle de versionamento.
 
 ## O COMANDO GIT STATUS
 
-O comando `git status` é utilizado constantemente para verificar se existem novos commits a serem realizados. Basicamente ele te informara se existem arquivos no seu repositorio que foram alterados e ainda não passaram por um commit, ou se existem arquivos na "Staging Area", que nada mais são do que arquivos que foram adicionados pelo usuario para fazerem parte do proximo commit (ou ponto na historia).
+O comando `git status` é utilizado constantemente para verificar se existem novos commits a serem realizados. Basicamente ele te informara se existem arquivos no seu repositório que foram alterados e ainda não passaram por um commit, ou se existem arquivos na "Staging Area", que nada mais são do que arquivos que foram adicionados pelo usuário para fazerem parte do proximo commit (ou ponto na historia).
 
 ![utilizando o comando git status](./git_status.png)
 
-Como o nosso repositorio ainda não possui nenhum arquivo, o git status nos informou que além de nosso projeto ainda não possuir nenhum `commit`, não existem arquivos para serem "commitados".
+Como o nosso repositório ainda não possui nenhum arquivo, o git status nos informou que além de nosso projeto ainda não possuir nenhum `commit`, não existem arquivos para serem "commitados".
 
 Vamos agora adicionar um arquivo .txt e verificar novamente o `git status`.
 
-![adicionando arquivo no repositorio](./readme.png)
+![adicionando arquivo no repositório](./readme.png)
 
 ![utilizando git status](./gitstatus2.png)
 
-Agora, apesar de o nosso arquivo Leia-me estar em branco, o `git status` nos informa de que existem arquivos no nosso repositorio com informações que ainda não estão rastreadas.
+Agora, apesar de o nosso arquivo Leia-me estar em branco, o `git status` nos informa de que existem arquivos no nosso repositório com informações que ainda não estão rastreadas.
 
 ## REALIZANDO O PRIMEIRO COMMITS
 
-Para rastrear o novo arquivo que criamos em nosso diretorio, primeiro usaremos o comando `git add <nome do arquivo>` para adicionar nosso arquivo na Staging Area.
+Para rastrear o novo arquivo que criamos em nosso diretório, primeiro usaremos o comando `git add <nome do arquivo>` para adicionar nosso arquivo na Staging Area.
 
 ![git add Leia-me.txt](./gitadd1.png)
 
@@ -73,7 +73,7 @@ Para rastrear o novo arquivo que criamos em nosso diretorio, primeiro usaremos o
 
 Agora quando utilizamos o comando `git status` somos informados de que existe um novo arquivo pronto para `commit` na Staging Area com alterações a serem rastreadas.
 
-Vamos agora realizar o primeiro commit do nosso repositorio. Vamos utilizar o comando `git commit -m <"descrição do commit">`.
+Vamos agora realizar o primeiro commit do nosso repositório. Vamos utilizar o comando `git commit -m <"descrição do commit">`.
 
 ![git commit -m "commit inicial"](./gitcommit1.png)
 
@@ -81,11 +81,11 @@ Agora, ao verificar o comando `git status`, somos informados que não existem ma
 
 ![git status](./gitstatus4.png)
 
-Para verificar o nosso historico de commits, utilizaremos o comando `git log`:
+Para verificar o nosso histórico de commits, utilizaremos o comando `git log`:
 
 ![git log](./gitlog1.png)
 
-Podemos verificar que existe um `commit` realizado no nosso projeto (o que acabamos de realizar). É possivel verificar a data, o autor e a descrição do `commit`. Perceba que logo após o codigo do commit em amarelo, é indicado que o commit foi realizado direto no branch principal (master).
+Podemos verificar que existe um `commit` realizado no nosso projeto (o que acabamos de realizar). É possível verificar a data, o autor e a descrição do `commit`. Perceba que logo após o codigo do commit em amarelo, é indicado que o commit foi realizado direto no branch principal (master).
 
 Antes de partimos para os branchs e para entendermos de uma vez a utilização dos comandos `git commit`, `git add` e `git status`, vamos incluir um texto qualquer no nosso arquivo .txt e vamos realizar um novo `commit`:
 
@@ -93,7 +93,7 @@ Antes de partimos para os branchs e para entendermos de uma vez a utilização d
 
 ![git status](./gitstatus5.png)
 
-Agora o comando `git status` nos informa que existem alterações não rastreadas no nosso arquivo .txt. Clareou? Sempre que possuirmos arquivos em seu repositorio com alterações não rastreadas pelo git, o comando `git status` irá te informar. Agora vamos utilizar os comandos `git add` e `git commit` novamente e realizar nosso segundo `commit`.
+Agora o comando `git status` nos informa que existem alterações não rastreadas no nosso arquivo .txt. Clareou? Sempre que possuirmos arquivos em seu repositório com alterações não rastreadas pelo git, o comando `git status` irá te informar. Agora vamos utilizar os comandos `git add` e `git commit` novamente e realizar nosso segundo `commit`.
 
 ![git commit -m "segundo commit"](./gitcommit2.png)
 
@@ -101,7 +101,7 @@ Agora o comando `git status` nos informa que existem alterações não rastreada
 
 ## Entendendo o que são branches
 
-Como descrito anteriormente, branches nada mais são do que "copias" do nosso diretoria que permitem-nos trabalhar no projeto sem que nossas alterações afetem os arquivos no "branch" principal (master). Desse modo, podemos realizar todas as alterações necessárias sem correr o risco de "bagunçar" o nosso projeto original, e apenas apos todas as alterações tiverem sido concluidas e devidamente testadas, realizarmos a junção dessas alterações com os arquivos originais.
+Como descrito anteriormente, branches nada mais são do que "copias" do nosso diretoria que permitem-nos trabalhar no projeto sem que nossas alterações afetem os arquivos no "branch" principal (master). Desse modo, podemos realizar todas as alterações necessárias sem correr o risco de "bagunçar" o nosso projeto original, e apenas apos todas as alterações tiverem sido concluídas e devidamente testadas, realizarmos a junção dessas alterações com os arquivos originais.
 
 A seguir, criaremos um novo `branch` em nosso projeto e então realizaremos uma alteração no nosso arquivo para em seguida realizar um `commit` no nosso novo branch e o `pull` para o `branch` principal.
 
@@ -127,7 +127,7 @@ Agora vamos dar uma olhada no `git log` do nosso projeto.
 
 ![git log](./gitlog2.png)
 
-Ja é possivel visualizar o nosso terceiro `commit`, mas agora o log nos informa que o `commit` foi realizado no branch `InserEquation`.
+Ja é possível visualizar o nosso terceiro `commit`, mas agora o log nos informa que o `commit` foi realizado no branch `InserEquation`.
 
 Essas alterações ainda não estão no `branch` principal `master` e vamos poder verificar isso agora executando o comando `git checkout master` para voltarmos para o branch principal. Após isso, ao ao abrir o nosso arquivo .txt iremos perceber que a equação do MandelBrot Set que inserimos anteriormente não está mais la.
 
