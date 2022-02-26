@@ -245,7 +245,7 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
-  min-height: 50rem;
+  min-height: 80rem;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -261,6 +261,10 @@ a:focus {
   display: grid;
   margin: 0;
   justify-items: right;
+}
+
+.main-heading a {
+  letter-spacing: 1.2rem;
 }
 
 .post-list-item {

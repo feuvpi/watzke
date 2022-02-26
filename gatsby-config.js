@@ -3,10 +3,10 @@ module.exports = {
     title: `Watzke`,
     author: {
       name: `Fred Pinheiro,`,
-      summary: `software developer and sound designer. `,
+      summary: `software developer and sound designer, writing about interesting stuff he have stumbled upon. `,
     },
-    description: `Here I will share some useful stuff I have been learning thought my software engineering journey.`,
-    siteUrl: `https://feuvpi.dev`,
+    description: `A space  to share useful stuff I have been learning thought my software engineering journey.`,
+    siteUrl: `https://watzke.dev`,
     social: {
       twitter: `feuvpi`,
     },
