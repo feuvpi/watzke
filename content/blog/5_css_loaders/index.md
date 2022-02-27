@@ -14,7 +14,6 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 	--size-square: 10vmin;
 	
 	display: block;
-	position: absolute;
 	width: 50%;
 	display: grid;
 	place-items: center;
