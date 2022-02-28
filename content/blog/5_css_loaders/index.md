@@ -8,7 +8,7 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 
 .loader {
 	--color: white;
-	--size-mid: 6vmin;
+	--size-mid: 10vmin;
 	--size-dot: 1.5vmin;
 	--size-bar: 0.4vmin;
 	--size-square: 10vmin;
@@ -24,8 +24,8 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 	place-items: center;
 	border-radius: 4px;
 	transition: opacity 0.4s ease;
-  height: 2.5rem;
-  margin-bottom: 1rem;
+  	height: 2.5rem;
+  	margin-bottom: 1rem;
 }
 
 .loader::before,
@@ -43,7 +43,7 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 .loader.--1::before {
 	width: var(--size-mid);
 	height: var(--size-mid);
-	border: 4px solid var(--color);
+	border: 8px solid var(--color);
 	border-top-color: transparent;
 	border-radius: 50%;
 	/*animation: loader-1 1s linear infinite;*/
@@ -53,7 +53,7 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 .loader.--1::after {
 	width: calc(var(--size-mid) - 2px);
 	height: calc(var(--size-mid) - 2px);
-	border: 2px solid transparent;
+	border: 4px solid transparent;
 	border-top-color: var(--color);
 	border-radius: 50%;
 	/*animation: loader-1 0.6s linear reverse infinite;*/
@@ -128,14 +128,14 @@ code {
 </style>
 <div style="text-align: justify">
 
-##### Vamos desenvolver rapidamente um loader utilizando apenas CSS puro e simples.
+##### Desenvolver rapidamente um loader de carregamento utilizando apenas CSS puro e simples.
 
 <div class=local-wrapper>
   <div class="item"><i class="loader --1 animation"></i></div>
 </div>
 
 
-Primeiramente precisamos de um componente html para receber CSS.
+Primeiros utilizaremos um pouco de HTML para criar um componente para receber nossas estilizações em CSS.
 
 ```html
 <div class="item">
@@ -143,14 +143,14 @@ Primeiramente precisamos de um componente html para receber CSS.
 </div>
 ```
 
-Ainda não visualiza-se o componente, o mesmo não possui conteúdo e ainda não recebeu nenhuma estilização.
+Ainda não é possível visualiza-lo, o mesmo não possui conteúdo e ainda não recebeu nenhuma estilização.
 
 Partindo para o nosso código CSS, vamos iniciar definindo a cor e tamanho do nosso loader, além de configurações de posição e alinhamento no grid:
 
 ```css
 .loader {
   --color: white;
-  --size-mid: 6vmin;
+  --size-mid: 10vmin;
 
   display: block;
   position: relative;
@@ -176,7 +176,7 @@ Utilizaremos pseudo-elementos associados com configurações de posição para c
 
 Acabamos de criar dois elementos que virão logo antes e depois de todo e qualquer componente da nossa página que possuir a classe "loader". A questão aqui é que até agora esse elementos não possuem conteúdo.
 
-Uma configuração importante é `position: absolute`. Faz com que os dois elementos iniciem na mesma posição. Dessa forma, poderemos usa-los como layers.
+> Uma configuração importante é `position: absolute`, que faz com que os dois elementos sejam posicionados em relação ao seu elemento pai. Essa propriedade será utilizada para fazer com que os dois elementos sejam posicionados no mesmo ponto, como se fossem duas camadas de um mesmo objeto. 
 
 A configuração `border-box` faz com que o `width` do componente em questão seja a soma do conteúdo, do padding e da borda.
 
@@ -186,7 +186,7 @@ Com nossas duas layers, vamos começar a injetar um pouco de CSS para começar a
 .loader.--1::before {
 	width: var(--size-mid);
 	height: var(--size-mid);
-	border: 4px solid var(--color);
+	border: 8px solid var(--color);
 	border-top-color: transparent;
 ```
 <div class="wrapper"><div class="notes">Agora finalmente podemos visualizar nosso loader ganhando forma:</div><div class="item">
@@ -199,7 +199,7 @@ Com apenas alguns comandos de CSS como `width`, `height` e `border`, começamos 
 .loader.--1::after {
   width: calc(var(--size-mid) - 2px);
   height: calc(var(--size-mid) - 2px);
-  border: 2px solid transparent;
+  border: 4px solid transparent;
   border-top-color: var(--color);
 }
 ```
@@ -233,7 +233,7 @@ animation: loader-1 1s linear infinite
 ```
 <div class="wrapper"><div class="notes">Agora sim, o loader está pronto para ser utilizado em nossas aplicações:</div><div class="item"><i class="loader --1 animation"></i></div></div>
 
-Aprendi a como desenvolver esse loader no CodePen [Simple CSS Loaders](https://codepen.io/jenning/pen/YzNmzaV) do [Jenning](https://codepen.io/jenning) . Lá é possível aprender a fazer outros CSS loaders como este.
+Aprendi a desenvolver esse loader no CodePen [Simple CSS Loaders](https://codepen.io/jenning/pen/YzNmzaV) do [Jenning](https://codepen.io/jenning). Lá é possível aprender a fazer outros CSS loaders como este.
 
 <div style="text-align: right">
 
