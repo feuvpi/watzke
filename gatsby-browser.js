@@ -11,3 +11,4 @@ import "prismjs/themes/prism.css"
 
 //import GoogleFonts Outfit
 import "@fontsource/outfit"
+import "@fontsource/prompt"

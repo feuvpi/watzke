@@ -32,19 +32,19 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --fontFamily-serif: "Merriweather", "Georgia", Cambria, "Times New Roman",
     Times, serif;
-  --font-body: "Outfit";
-  --font-heading: "Outfit";
-  --fontWeight-normal: 400;
+  --font-body: 'prompt', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --fontWeight-normal: 900;
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
   --fontWeight-extrabold: 800;
   --fontWeight-black: 900;
-  --fontSize-root: 16px;
+  --fontSize-root: 19px;
   --lineHeight-none: 1;
-  --lineHeight-tight: 1.1;
-  --lineHeight-normal: 1.5;
-  --lineHeight-relaxed: 1.625;
+  --lineHeight-tight: 1.5rem;
+  --lineHeight-normal: 1.7rem;
+  --lineHeight-relaxed: 1.9em;
   /* 1.200 Minor Third Type Scale */
   --fontSize-0: 0.833rem;
   --fontSize-1: 1rem;
@@ -166,6 +166,7 @@ p {
   --x-height-multiplier: 0.35;
   margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
   padding: var(--spacing-0);
+  font-weight: 400;
 }
 
 ul,
@@ -245,7 +246,7 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
-  min-height: 80rem;
+  min-height: 50rem;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -261,10 +262,6 @@ a:focus {
   display: grid;
   margin: 0;
   justify-items: right;
-}
-
-.main-heading a {
-  letter-spacing: 1.2rem;
 }
 
 .post-list-item {
@@ -294,6 +291,7 @@ a:focus {
   font-size: var(--fontSize-4);
   display: grid;
   justify-items: right;
+  letter-spacing: 1rem;
 }
 
 .bio {
