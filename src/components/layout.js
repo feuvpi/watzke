@@ -25,9 +25,9 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main style={{textAlign: 'justify'}}>{children}</main>
       <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <div>
+        © {new Date().getFullYear()},{` `}<a href="https://watzke.dev">Fred Vasquez</a>
+        </div>
       </footer>
     </div>
   )
