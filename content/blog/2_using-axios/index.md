@@ -5,9 +5,9 @@ description: "Utilizando a dependência Axios para comunicação com API's exter
 ---
 <div style="text-align: justify">
 
-##### Nesse post iremos realizar uma requisição para uma API externa utilizando o protocolo HTTP através da dependência Axios.
+##### Vamos realizar uma requisição HTTP para uma API externa utilizando o modulo Axios. 
 
-###### Sobre a dependência Axios
+###### Sobre o Axios
 
 O Axios é um cliente HTTP promise-based para o node.js e para o browser. Utilizando essa ferramenta open-source é possível realizar requisições HTTP em APIs externas de forma simples e objetiva.
 
@@ -45,7 +45,7 @@ $ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 ###### Utilizando funções assíncronas com axios para realizar solicitações externas
 
-A dependência Axios permite realizar requisições http utilizando métodos GET, POST, PUT, DELETE, PATCH, OPTIONS, HEAD. Uma das formas de fazer isso é utilizando funções assíncronas. Abaixo iremos realizar uma consulta aos próximos lançamentos na [API do TheMovieDB](https://www.themoviedb.org/documentation/api) utilizando o método `async/await`. 
+Com o Axios conseguimos realizar requisições HTTP utilizando métodos `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS` e `HEAD`. Uma das formas de fazer isso é utilizando funções assíncronas. Para por em pratica vamos realizar a seguir uma requisição pelos próximos lançamentos de filmes na [API do TheMovieDB](https://www.themoviedb.org/documentation/api) utilizando o método `async/await`. 
 
 ```js
 const axios = require('axios');
@@ -83,7 +83,7 @@ Recebemos como resultado uma lista em formato JSON em que cada objeto representa
   }, [...]
   
   ```
-Dessa forma vimos rapidamente como podemos fazer o uso da dependência Axios em nossos projetos para realizar requisições HTTP promise-based de forma simples e rápida.
+Dessa forma podemos utilizar o modulo Axios para em nossos projetos para realizar requisições HTTP promised-based de forma simples e rápida.
 
 <div style="text-align: right">
 
