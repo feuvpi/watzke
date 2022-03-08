@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Watzke`,
     author: {
-      name: `Fred Pinheiro,`,
+      name: `Fred Vasquez,`,
       summary: `software developer and sound designer, writing about interesting stuff he have stumbled upon. `,
     },
     description: `A space  to share useful stuff I have been learning thought my software engineering journey.`,
