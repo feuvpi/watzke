@@ -5,13 +5,13 @@ description: "Utilizando a dependência Axios para comunicação com API's exter
 ---
 <div style="text-align: justify">
 
-##### Vamos realizar uma requisição HTTP para uma API externa utilizando o modulo Axios. 
+##### Realizando uma requisição HTTP para uma API externa utilizando o modulo Axios. 
 
-###### Sobre o Axios
+###### SOBRE O AXIOS
 
 O Axios é um cliente HTTP promise-based para o node.js e para o browser. Utilizando essa ferramenta open-source é possível realizar requisições HTTP em APIs externas de forma simples e objetiva.
 
-###### Instalando o Axios no Projeto
+###### INSTALANDO O AXIOS NO PROJETO
 
 Podemos instalar o Axios das seguintes formas:
 
@@ -43,7 +43,7 @@ $ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
 
-###### Utilizando funções assíncronas com axios para realizar solicitações externas
+###### UTILIZANDO FUNÇÕES ASSÍNCRONAS COM O AXIOS PARA REALIZAR REQUISIÇÕES EXTERNAS
 
 Com o Axios conseguimos realizar requisições HTTP utilizando métodos `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS` e `HEAD`. Uma das formas de fazer isso é utilizando funções assíncronas. Para por em pratica vamos realizar a seguir uma requisição pelos próximos lançamentos de filmes na [API do TheMovieDB](https://www.themoviedb.org/documentation/api) utilizando o método `async/await`. 
 
