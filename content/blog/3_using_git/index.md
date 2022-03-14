@@ -5,7 +5,8 @@ description: "Utilizando o git através da linha de comando"
 ---
 
 <div style="text-align: justify">
-Olá! Que tal aprender um pouco sobre como utilizar a ferramenta git para controle de versão em projetos?
+
+##### Utilizando o git através da linha de comando para rastreamento de arquivos e controle de alterações. 
 
 #### O QUE É GIT?
 
@@ -157,7 +158,6 @@ Para conectar o repositório local com o repositório remoto, utiliza-se o coman
 git remote add <name> <url>
 
 ```
-É importante que previamente o git receba um nome de usuário para associar os commits 
 
 ##### ATUALIZANDO O REPOSITÓRIO REMOTO COM AS ALTERAÇÕES DO REPOSITÓRIO LOCAL
 
