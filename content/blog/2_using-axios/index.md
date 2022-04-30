@@ -1,19 +1,19 @@
 ---
-title: Utilizando a dependência Axios para realizar requisições HTTP promise-based.
+title: Using the Axios dependency to send promise-based HTTP requests.
 date: "2022-03-06T22:40:32.169Z"
-description: "Utilizando a dependência Axios para comunicação com API's externas."
+description: "Using the Axios dependency to interact with external APIs."
 ---
 <div style="text-align: justify">
 
-##### Realizando uma requisição HTTP para uma API externa utilizando o modulo Axios. 
+##### Sending an HTTP request to an external API using Axios.
 
-###### SOBRE O AXIOS
+###### ABOUT AXIOS
 
-O Axios é um cliente HTTP promise-based para o node.js e para o browser. Utilizando essa ferramenta open-source é possível realizar requisições HTTP em APIs externas de forma simples e objetiva.
+Axios is a promise-based HTTP client for Node.js. This open-source tool can be used to handle external API communications objectvily. 
 
-###### INSTALANDO O AXIOS NO PROJETO
+###### INSTALLING AXIOS IN THE PROJECT
 
-Podemos instalar o Axios das seguintes formas:
+There are two main ways to install Axios in our project:
 
 - `npm:`
 
@@ -43,9 +43,9 @@ $ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 ```
 
 
-###### UTILIZANDO FUNÇÕES ASSÍNCRONAS COM O AXIOS PARA REALIZAR REQUISIÇÕES EXTERNAS
+###### USING ASYNCHRONOUS FUNCTIONS WITH AXIOS TO PERFORM EXTERNAL REQUESTS
 
-Com o Axios conseguimos realizar requisições HTTP utilizando métodos `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS` e `HEAD`. Uma das formas de fazer isso é utilizando funções assíncronas. Para por em pratica vamos realizar a seguir uma requisição pelos próximos lançamentos de filmes na [API do TheMovieDB](https://www.themoviedb.org/documentation/api) utilizando o método `async/await`. 
+With Axios we can make HTTP requests using `GET`, `POST`, `PUT`, `DELETE`, `PATCH`, `OPTIONS` and `HEAD` methods. One of the ways to achieve this is with asynchronous functions. To practice it, we are going to send a request for the upcoming movies in the  [TheMovieDB`s API](https://www.themoviedb.org/documentation/api) using `async/await` method. 
 
 ```js
 const axios = require('axios');
@@ -61,7 +61,7 @@ const buildURL = path => `${BASE_URL}${path}?api_key=${API_KEY}`
  
 console.log(callAPI())
 ```
-Recebemos como resultado uma lista em formato JSON em que cada objeto representa um filme que será lançado em breve:
+As a result, we receive a JSON format list where each object represents a movie that will be released soon:
 
 ```Promise { <pending> }
 [
@@ -83,7 +83,7 @@ Recebemos como resultado uma lista em formato JSON em que cada objeto representa
   }, [...]
   
   ```
-Dessa forma podemos utilizar o modulo Axios para em nossos projetos para realizar requisições HTTP promised-based de forma simples e rápida.
+In that way, Axios can be used in projects to handle HTTP requests and API communication. 
 
 <div style="text-align: right">
 

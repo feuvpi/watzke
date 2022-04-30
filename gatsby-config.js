@@ -28,6 +28,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-social9-socialshare",
+      options: {
+        content:  "0bbe9fe3568b4cbda35544e4d5149dbb",
+        async: true,
+        defer: true
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

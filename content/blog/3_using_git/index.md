@@ -1,170 +1,172 @@
 ---
-title: Utilizando a ferramenta Git pela linha de comando para controle de alterações em projetos.
+title: Using Git from command line for file tracking and peer collaboration 
 date: "2022-03-13T22:12:03.284Z"
-description: "Utilizando o git através da linha de comando"
+description: "Using Git from command line"
 ---
 
 <div style="text-align: justify">
 
-##### Utilizando o git através da linha de comando para rastreamento de arquivos e controle de alterações. 
+##### Using Git from command line for file tracking and version management. 
 
-#### O QUE É GIT?
+#### WHAT IS GIT?
 
-Primeiramente, não podemos confundir `git` e `GitHub`, são coisas distintas.
+First, we cannot misunderstood `git` with `GitHub`, they are not the same thing.
 
-O `git` é um projeto open-source para controle de versionamento muito utilizado por desenvolvedores e criado no ano de 2005 por Linus Tordvalds, criador do kernel do sistema operacional Linux. 
+`Git` is an open-source project widely used by developers for file tracking and peer collaboration. It was created in 2005 by Linus Tordvalds, creator of the Linux operating system, Kernel.
 
-Mais objetivamente, o `git` é uma ferramenta que pode ser utilizada para controlar as alterações de um projeto, sendo possível com ele manter um histórico de todas as alterações realizadas, sendo possível retroceder para qualquer `ponto da historia` em caso de necessidade. 
+More precisely, `git` is a tool that can be used to allow file-tracking. 
 
-Quando o git é inicializado no repositório de um projeto, possibilita a partir da linha de comando ou usando uma GUI - Guided User Interface, criar `pontos na historia` e `ramificações` do seu projeto, que são importantes para entender o que de fato é está poderosa ferramenta e como utiliza-la. 
+It works by `commits` and `branches`, which are important concepts to gasp what actually is this powerful tool and how to use it properly.
 
-`Ramificações` são uma copia de todo ou parte do projeto, de modo que o desenvolvedor possa trabalhar em cima dessa copia realizando as modificações necessárias sem que isso afete os arquivos que estão no repositório principal.
+`Branches` can be understood as copies of the project, allowing developers to work on top of it without affecting the original files that are in the main repository.
 
-Sempre que alterações realizadas em arquivos que estejam sendo monitorados pelo git forem "commitadas", elas estarão disponíveis no log da ramificação - ou branch, e será possível retroceder para esses pontos, caso seja necessário.  
+Whenever any monitored files have changes implemented in them and those changes are committed, they will show up in the branch log making possible to rewind to these points, if necessary.
 
-> `Ramificações` (ou `branches`) possibilitam aos desenvolvedores alterarem os arquivos do projeto de forma independente, sem que isso afete os arquivos principais. Pode-se pensar em um `branch` como sendo uma copia do diretório em que se deseja trabalhar.
+> `Branches` allow developers to change project files independently, without affecting the main files. We can think of a `branch` as being a copy of the directory we want to work in.
 
-Ao terminar de trabalhar nas `branches`, são realizados os `commits`, que podem ser vistos como "`pontos na historia`". São uma "fotografia" de como os arquivos estavam naquele momento. Caso seja necessário, será possível retornar a esses estados.
+ `Commits` can be seen as "`checkpoints`", or snapshots. They are the state of the files at a certain time, and with git we can make our project go back to those states if we need to. 
 
-A seguir iremos ver como utilizar o `git` para realizar o controle de versão de nossos projetos a partir da linha de comando e como conectar o `git` em nossa maquina com a nossa conta no `GitHub`, realizando as operações de push pela linha de comando.
+Next, we will see how to use `git` to perform file-tracking from the command line and how to connect `git` with our `GitHub` account, performing push operations through CM.
 
-##### O QUE É GITHUB
+##### WHAT IS GITHUB
 
-`GitHub` é um serviço online de hospedagem de repositórios. Ele permite que os desenvolvedores mantenham todos os commits sincronizados entre os membros do time.
+`GitHub` is an remote repository hosting service. It also allows developers to keep all commits synchronized between team members.
 
-A seguir iremos criar um repositório local, inicializar o git no repositório, realizar o `commit` de um arquivo e realizar o envio dos arquivos para o nosso repositório no `GitHub`.
+##### GIT INSTALLATION
 
-##### INSTALANDO O GIT
+To install git on your machine, follow the instructions at https://git-scm.com/downloads.
 
-Para instalar o git em sua maquina, siga as instruções em https://git-scm.com/downloads.
+##### INITIALIZING GIT IN A LOCAL REPOSITORY
 
-##### INICIALIZANDO O GIT EM UM REPOSITÓRIO LOCAL
-
-Primeiramente, iremos inicializar o git em um repositório no qual estamos trabalhando. Utilizando a sua linha de comando: `git init`.
+First, we should initialize git at the root folder of our repository using the command `git init`:
 
 ![Command Line: git init](./gitinitcmd.png)
 
-![Arquivo .git criado no repositório](./gitinitfolder.png)
+![.git file created in the repository](./gitinitfolder.png)
 
-Sempre que inicializamos o git em um repositório, é criado um arquivo do tipo ".git". É nesse arquivo que ficarão armazenados todas as informações necessárias para a realização do controle de versionamento.
+Whenever we initialize git in a repository, a file of type ".git" is created. It is in this file that all the information necessary to carry out file tracking and versioning control will be stored.
 
-##### O COMANDO GIT STATUS
+##### CHECKING STATUS
 
-O comando `git status` é utilizado constantemente para verificar se existem novos commits a serem realizados. 
+The `status` command is used constantly to check if there is any new files with untracked changes. 
 
-Basicamente ele te informara se existem arquivos no seu repositório que foram alterados e ainda não passaram por um commit, ou se existem arquivos na "Staging Area", que nada mais são do que arquivos que foram adicionados pelo usuário para fazerem parte do proximo commit (ou ponto na historia).
+![status](./git_status.png)
 
-![utilizando o comando git status](./git_status.png)
+As our repository doesn't have any files yet, there are no files to tracked.
 
-Como o nosso repositório ainda não possui nenhum arquivo, o git status nos informou que além de nosso projeto ainda não possuir nenhum `commit`, não existem arquivos para serem "commitados".
+Let's now add a .txt file and check `git status` again.
 
-Vamos agora adicionar um arquivo .txt e verificar novamente o `git status`.
+![adding file in repository](./readme.png)
 
-![adicionando arquivo no repositório](./readme.png)
+![git status](./gitstatus2.png)
 
-![utilizando git status](./gitstatus2.png)
+This time a new file with untracked changes show up. We need to make a commit if we want to track those changes. 
 
-Agora ao utilizar o comando `git status` é possível verificar que existe um arquivo em nosso repositório com alterações não rastreadas. 
+##### COMMITTING CHANGES
 
-##### REALIZANDO O PRIMEIRO COMMIT
-
-Para rastrear o novo arquivo que criamos em nosso diretório, primeiro usaremos o comando `git add <nome do arquivo>` para adicionar nosso arquivo na Staging Area.
+To make a commit, we need to add the files we wish to commit to staging area first using the `add` command followed by the file name:
 
 ![git add Leia-me.txt](./gitadd1.png)
 
 ![git status](./gitstatus3.png)
 
-Agora ao utilizar o comando `git status`, é possível verificar que o arquivo Leia-me.txt foi adicionado para `commit` na Staging Area com alterações a serem rastreadas.
+`Git status` can be used to verify that Leia-me.txt has been added for `commit` in the Staging Area.
 
-Vamos agora realizar o primeiro commit do nosso repositório. Vamos utilizar o comando `git commit -m <"descrição do commit">`.
+Now let's commit the file (or files, if there are more than one at staging are to be committed):
+
+```
+git commit -m "commit description"
+
+```
 
 ![git commit -m "commit inicial"](./gitcommit1.png)
 
-Pronto, o arquivo Leia-me.txt agora está rastreado. Sempre que novas alterações forem feitas ao arquivo, será necessário realizar novos `commits` para rastrear as novas alterações. 
+Cool, Leia-me.txt is now tracked. Whenever new changes are made to the file, it will be important to make new `commits` if we want to keep tracking it.
 
-Agora, ao verificar o comando `git status`, é possível verificar que o arquivo Leia-me.txt não está mais aparecendo. 
+Now, when cheking `git status`, there are no files to be staged or committed. 
 
 ![git status](./gitstatus4.png)
 
-##### O COMANDO GIT LOG
+##### GIT LOG
 
-Para verificar o nosso histórico de commits, utiliza-se o comando `git log`:
+The command `git log` is used to check commit history: 
 
 ![git log](./gitlog1.png)
 
-Podemos verificar que existe um `commit` realizado no nosso projeto (o que acabamos de realizar). É possível verificar a data, o autor e a descrição do `commit`. Perceba que logo após o código do commit em amarelo, é indicado que o commit foi realizado direto no branch principal (master).
+We can verify that there is a `commit` performed in our project (which we have just performed). You can check the date, author, and description of the `commit`. Note that right after the commit code in yellow, it is pointed that the commit was carried out directly on the main branch (master).
 
-Antes de partimos para os branches e para entendermos de uma vez a utilização dos comandos `git commit`, `git add` e `git status`, vamos incluir um texto qualquer no nosso arquivo .txt e vamos realizar um novo `commit`:
+Before we go to the branches and understand at once the use of the `git commit`, `git add`, and `git status` commands, let's include some text in our .txt file, and perform a new `commit`:
 
-![Alterando o nosso arquivo .txt](./segundocommit.png)
+![Making changes to .txt](./segundocommit.png)
 
 ![git status](./gitstatus5.png)
 
-Agora o comando `git status` nos informa que existem alterações não rastreadas no nosso arquivo .txt. Clareou? Sempre que possuirmos arquivos em seu repositório com alterações não rastreadas pelo git, o comando `git status` irá te informar. Agora vamos utilizar os comandos `git add` e `git commit` novamente e realizar nosso segundo `commit`.
+Now the `git status` command tells us that there are untracked changes in our .txt file. Shed light? Whenever we have files in your repository with untracked changes, the `git status` command will inform you, so use it constantly. Now let's use the `git add` and `git commit` commands again and perform our second `commit`.
 
 ![git commit -m "segundo commit"](./gitcommit2.png)
 
-> **IMPORTANTE**: O comentário dos commits devem conter uma descrição das principais alterações introduzidas nos arquivos que estamos rastreando, de forma clara e objetiva. Pode ser algo como "realizado alteração 'A' para solucionar o problema 'B'". Isso será importante para que no futuro outros desenvolvedores e até nos possam identificar as alterações realizadas.
+> **IMPORTANT**: It's important to remember that commit messages should contain a clear description of the main changes being introduced. It might be something like "change 'A' made to solve problem 'B'". That way in future times other developers and even ourselves can easily identify all the changes made.
 
-##### ENTENDENDO O QUE SÃO BRANCHES
+##### ABOUT BRANCHES
 
-Branches nada mais são do que "copias" do nosso diretório que permitem-nos trabalhar no projeto sem que as alterações realizadas afetem os arquivos no "branch" principal (master). 
+Branches are mere "copies" of our project directories, allowing us to work on them without affecting the files in the main "branch" (master).
 
-Desse modo, o arquivos podem ser alterados sem que se corra o risco de "bagunçar" o nosso projeto original caso algo dê errado. 
+In this way, the risk of "messing up" everything if something goes wrong is eliminated. 
 
-Apenas apos todas as alterações tiverem sido concluídas e devidamente testadas, é realizada a junção do da `ramificação` com o `branch` principal. 
+Only after all changes have been completed and properly tested, they are merged into the `main branch`. If we are working on  a team in a remote repository like GitHub, we'll need to create a `pull request`.
 
-A seguir, criaremos um novo `branch` em nosso projeto e então realizaremos uma alteração no nosso arquivo para em seguida realizar um `commit` no nosso novo branch e o `pull` para o `branch` principal.
+Next, we'll create a new `branch` in our project, create a change to our txt file, `commit` it to our new branch and `merge` it to the main `branch`.
 
-Para criar um novo branch no seu projeto, utilize o comando `git branch <nome do novo branch>`, sem considerar os colchetes.
+To create a new branch, use the command `git branch <name of new branch>`, without considering the square brackets.
 
-> **IMPORTANTE**: Ao criar um branch, não mudamos para ele automaticamente. Utilizaremos o comando `git checkout <new branch name>` para alterara para a nova ramificação.
+> **IMPORTANT**: When creating a branch, we do not switch to it automatically. We will use the command `git checkout <new branch name>` to change to the new branch.
 
 ![Criando uma nova ramificação e entrando nela](./git_branch1.png)
 
-Agora ao usarmos o comando `git status` somos informados que estamos trabalhando no branch "InsertEquation" que acabamos de criar. Isso quer dizer que a partir de agora as alterações que realizarmos nos nossos arquivos não irão impactar o branch principal.
+Using `git status` we can check that we are working on the "InsertEquation" branch we just created. This means that from now on the changes made to our files will not impact the main branch.
 
-É importante notarmos ainda que como acabamos de realizar a mudança para a nova ramificação e não realizamos nenhum alteração, dessa forma o comando `git status` nos informa que não existem arquivos a serem rastreados.
+It's also important to note that since we've just made the switch to the new branch and haven't made any changes, the `git status` command tells us that there are no files to track.
 
 ![Trabalhando na nova ramificação](./gitstatus6.png)
 
-Agora vamos inserir uma equação no nosso arquivo .txt e realizar um commit no nosso novo branch.
+Now let's insert an equation into our .txt file and commit it to our new branch.
 
 ![Realizando uma alteração no arquivo .txt](./thirdcommit.png)
 
 ![Utilizando os comandos git add, git commit e git status.](./gitcommit3.png)
 
-Agora vamos dar uma olhada no `git log` do nosso projeto.
+Now let`s use `git log` to check our change history.
 
 ![git log](./gitlog2.png)
 
-Ja é possível visualizar o nosso terceiro `commit`, mas agora o log nos informa que o `commit` foi realizado no branch `InserEquation`.
+We can already see our third `commit`, and it was implemented on `InserEquation` branch.
 
-Essas alterações ainda não estão no `branch` principal `master` e vamos poder verificar isso agora executando o comando `git checkout master` para voltarmos para o branch principal. Após isso, ao ao abrir o nosso arquivo .txt iremos perceber que a equação do MandelBrot Set que inserimos anteriormente não está mais la.
+Previous changes are not yet implemented at the `main branch` and this can be verified by running the command `git checkout master` to switch to main. Now, when opening the .txt file, it can be noticed that the equation is no longer there.
 
 ![Arquivo .txt sem alterações realizadas na nova ramificação](./backtomaster.png)
 
-##### FAZENDO A JUNÇÃO DAS ALTERAÇÕES REALIZADAS COM O BRANCH PRINCIPAL
+##### MERGING ONE BRANCH INTO OTHER
 
-Para finalizar esse post sobre como utilizar a ferramenta `git` para sistema de controle de versão, vamos agora realizar a junção ou "merge" das alterações que realizamos no nosso branch InsertEquation com o branch principal ou "master" utilizando o comando`git merge InsertEquation`
+It is time to "merge" the changes created in our InsertEquation branch into the main one using the `git merge InsertEquation`.
 
-Perceba que agora, continuamos no `master branch` mas o arquivo .txt está atualizado com a equação do Mandelbrot Set que havia sido inserida na outra ramificação. Dessa forma podemos utilizar a ferramenta git em nossa maquina para realizar o controle de versão dos nossos projetos de forma profissional e eficiente.
+Note that now the .txt file is updated with the equation that was previously inserted in the branch we just merged. In this way, we can use git to perform file tracking and version control our projects in a professional and efficient manner. 
 
 ##### CONECTANDO O NOSSO REPOSITÓRIO LOCAL COM O GITHUB
 
-Para conectar o repositório local com o repositório remoto, utiliza-se o comando `git remote`, definindo um nome para o repositório remoto e informando a sua url:
+To connect with a remote repository, use the `git remote` and define a name for the remote repository, and inform the URL or SSH Key provided by the service. 
+
 
 ```
-git remote add <name> <url>
+git remote add <name> <URL>
 
 ```
 
-##### ATUALIZANDO O REPOSITÓRIO REMOTO COM AS ALTERAÇÕES DO REPOSITÓRIO LOCAL
+##### UPDATING THE REMOTE REPOSITORY 
 
-Após ter associado a URL de um repositório remoto a um nome, basta utilizar esse nome para realizar os pushes das alterações do nosso repositório local para o remoto:
+After associating the URL of a remote repository with a name, just use it to push changes from local repository:
 
 ```
-git push <nome>
+git push <name>
 ```
 
 <div style="text-align: right">
