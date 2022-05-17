@@ -1,7 +1,7 @@
 ---
-title: Criando um loader a partir de CSS puro
+title: Creating loader animation from plain CSS.
 date: "2022-02-26T22:40:32.169Z"
-description: "Utilizando CSS de forma simples para criar animações de carregamento."
+description: "Using CSS to create loading animations"
 ---
 <style>
 /* LOADERS */
@@ -82,6 +82,7 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 
 .notes {
   grid-column: 1 / 3;
+  text: blue;
 }
 
 .item {
@@ -90,6 +91,7 @@ description: "Utilizando CSS de forma simples para criar animações de carregam
 
 code {
   background-color: white;
+  color: black;
   border-radius: 10%;
 }
 
@@ -128,14 +130,14 @@ code {
 </style>
 <div style="text-align: justify">
 
-##### Desenvolver rapidamente um loader de carregamento utilizando apenas CSS puro e simples.
+##### Quickly develop a loader using only pure and simple CSS.
 
 <div class=local-wrapper>
   <div class="item"><i class="loader --1 animation"></i></div>
 </div>
 
 
-Primeiros utilizaremos um pouco de HTML para criar um componente para receber nossas estilizações em CSS.
+First let's use some HTML to create a container for our CSS stylings.
 
 ```html
 <div class="item">
@@ -143,9 +145,7 @@ Primeiros utilizaremos um pouco de HTML para criar um componente para receber no
 </div>
 ```
 
-Ainda não é possível visualiza-lo, o mesmo não possui conteúdo e ainda não recebeu nenhuma estilização.
-
-Partindo para o nosso código CSS, vamos iniciar definindo a cor e tamanho do nosso loader, além de configurações de posição e alinhamento no grid:
+Moving on to CSS, let's start by defining the color and size of the loader, as well position and alignment settings of the grid:
 
 ```css
 .loader {
@@ -159,11 +159,11 @@ Partindo para o nosso código CSS, vamos iniciar definindo a cor e tamanho do no
   place-items: center;
 }
 ```
-Utilizar unidades como `vmin`, `vmax` e `rem` proporciona responsividade imediata à mudanças de proporção da viewport sem a necessidade de se utilizar `media queries`.
+Using units like `vmin`, `vmax` and `rem` provides immediate responsiveness to viewport aspect ratio changes without the need to use `media queries`.
 
-> Para a criação do loader iremos utilizar os pseudo-elementos `before` e `after`. Pseudo-elementos são palavras especiais no css que permitem estilizar determinadas partes do componentes selecionado. Os pseudo-elementos `before` e `after` podem ser utilizados para injetar conteúdo antes ou depois de um componente. 
+> Next let's the pseudo-elements `before` and `after`. Pseudo-elements are special words in CSS that allow you to style certain parts of selected components. The `before` and `after` pseudo-elements can be used to inject content right before or after a target.
 
-Utilizaremos pseudo-elementos associados com configurações de posição para criar duas camadas - ou layers no nosso componente. Iremos estilizar essas duas layers de formas diferentes para a criação do loader.
+We will use pseudo-elements associated with position settings to create two layers in our container. We will style these two layers in different ways to create the loader animation effect.
 
 ```css
 .loader::before,
@@ -174,13 +174,13 @@ Utilizaremos pseudo-elementos associados com configurações de posição para c
 }
 ```
 
-Acabamos de criar dois elementos que virão logo antes e depois de todo e qualquer componente da nossa página que possuir a classe "loader". A questão aqui é que até agora esse elementos não possuem conteúdo.
+We've just created two elements that will come just before and after each and every component on our page that has the "loader" class. The thing here is that so far these elements have no content.
 
-> Uma configuração importante é `position: absolute`, que faz com que os dois elementos sejam posicionados em relação ao seu elemento pai. Essa propriedade será utilizada para fazer com que os dois elementos sejam posicionados no mesmo ponto, como se fossem duas camadas de um mesmo objeto. 
+> An important setting is `position: absolute`, which causes these two elements to be positioned relative to their parent element. This property will help postion both ::before and ::after at the same place, as if they were two layers of the same object.
 
-A configuração `border-box` faz com que o `width` do componente em questão seja a soma do conteúdo, do padding e da borda.
+The `border-box` setting makes the `width` of the component its content, padding and border.
 
-Com nossas duas layers, vamos começar a injetar um pouco de CSS para começar a construir nosso loader, começaremos pelo `before`.
+Now that we have set up both layers let's start injecting some CSS to give life to our element. We'll start with `::before`.
 
 ```css
 .loader.--1::before {
@@ -193,7 +193,7 @@ Com nossas duas layers, vamos começar a injetar um pouco de CSS para começar a
   <i class="loader exemplo" style="width: var(--size-mid);height: var(--size-mid);border: 4px solid var(--color);border-top-color: transparent;"></i>
 </div></div>
 
-Com apenas alguns comandos de CSS como `width`, `height` e `border`, começamos a criar nossa animação. Utilizaremos o mesmo método para o `after`, apenas alterando suavemente algumas configurações. Para visualizar o resultado vamos comentar o código do `before` para que a camada não fique visível.
+With just a few CSS commands like `width`, `height` and `border`, we started building our loading animation. We'll use the same method for `::after`, just gently changing some settings. To visualize the result, let's comment out the `::before` code so that the layer is not visible.
 
 ```css
 .loader.--1::after {
@@ -208,15 +208,15 @@ Com apenas alguns comandos de CSS como `width`, `height` e `border`, começamos 
   <i class="loader exemplo" style="width: calc(var(--size-mid) - 2px);height: calc(var(--size-mid) - 2px);border: 2px solid transparent;border-top-color: var(--color);"></i>
 </div></div>
 
-<div class="wrapper"><div class="notes"><code>::before</code> e <code>::after</code> juntos:</div><div class="item">
+<div class="wrapper"><div class="notes"><code>::before</code> e <code>::after</code> together:</div><div class="item">
   <i class="loader --A" style="border-radius: 0%;"></i>
 </div></div>
 
 
 
-<div class="wrapper"><div class="notes">Para dar um formato circular, uma opção é adicionar a configuração <code>`border-radius: 100%`</code> em ambos os blocos que acabamos de criar:</div><div class="item"><i class="loader --1"></i></div></div>
+<div class="wrapper"><div class="notes">To give it a circular shape, one option is to add the configuration <code>`border-radius: 100%`</code> in both layers we`ve just created:</div><div class="item"><i class="loader --1"></i></div></div>
 
-Para continuar a construção do nosso loader precisamos criar uma animação de rotação e aplicar a cada uma das layers, mas de forma que elas rotacionem em sentidos e velocidades diferentes. Utilizaremos a propriedade CSS `transform` e o comando `rotate`.
+Now let's introduce a rotation animation and apply it to each of the ::before and ::after, making sure they'll rotate in different directions and speeds. We will use the `transform` CSS property and the `rotate` command.
 
 ```css
 @keyframes loader-1 {
@@ -224,16 +224,16 @@ Para continuar a construção do nosso loader precisamos criar uma animação de
 		transform: rotate(1turn);
 	}
 ```
-Para aplicar essa animação nos nossos layers, vamos inserir os seguintes comandos em cada um dos blocos `::before` e `::after`:
+To apply this animation, let's insert the following commands in each of the `::before` and `::after` blocks:
 
 ```css
 animation: loader-1 0.6s linear reverse infinite
 
 animation: loader-1 1s linear infinite
 ```
-<div class="wrapper"><div class="notes">Agora sim, o loader está pronto para ser utilizado em nossas aplicações:</div><div class="item"><i class="loader --1 animation"></i></div></div>
+<div class="wrapper"><div class="notes">Now, the loader is ready to be applied:</div><div class="item"><i class="loader --1 animation"></i></div></div>
 
-Aprendi a desenvolver esse loader no CodePen [Simple CSS Loaders](https://codepen.io/jenning/pen/YzNmzaV) do [Jenning](https://codepen.io/jenning). Lá é possível aprender a fazer outros CSS loaders como este.
+I learned to develop this loader in [Jenning](https://codepen.io/jenning)'s CodePen, [Simple CSS Loaders](https://codepen.io/jenning/pen/YzNmzaV). There you can learn how to build other CSS loaders like this one.
 
 <div style="text-align: right">
 
