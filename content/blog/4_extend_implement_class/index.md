@@ -1,13 +1,15 @@
 ---
 title: Implements or Extends. What are the differences? 
-date: "2022-05-16T22:40:32.169Z"
+date: "2022-05-17T22:40:32.169Z"
 description: "What are the differences between the Java keywords extends and implements"
 ---
 <div style="text-align: justify">
 
-Implements is for when we want to `implement a interface`. Extends is used when you want to `extend a base class` and inherit its properties and methods implementations. 
+###### IMPLEMENTS vs EXTENDS
 
-###### INTERFACE vs REGULAR CLASS
+Implements is used to `implement a interface` on a class. Extends is used when you want to `extend a class` from a base class and inherit its properties and methods implementations. 
+
+###### INTERFACES
 
 To better understand the the implements and extends keywords, we need to understand about classes and interfaces.
 
@@ -24,6 +26,7 @@ public interface VeihicleInterface {
   public void applyBrakes(int a);
 }
 ```
+###### ABSTRACT CLASSES
 Abstract classes are meant to implement hierarchy. They can contain attributes, abstract and non-abstract methods while interfaces are fully abstract. Abstract classes provide default behaviors that your implementation can reuse.
 
 > A class can only extend one other class, but can implement several interfaces. 
