@@ -1,4 +1,5 @@
 // custom typefaces
+import './src/styles/global.css'
 import "typeface-montserrat"
 import "typeface-merriweather"
 // normalize CSS across browsers
@@ -12,3 +13,6 @@ import "prismjs/themes/prism.css"
 //import GoogleFonts Outfit
 import "@fontsource/outfit"
 import "@fontsource/prompt"
+
+//TailwindCSS 
+//import './src/styles/global.css'
