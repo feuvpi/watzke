@@ -1,5 +1,6 @@
 import React from 'react'
 import { DocumentTextIcon, ChatAltIcon } from '@heroicons/react/solid'
+import { Link } from "gatsby";
 
 const Navbar = () => {
   return (
@@ -9,14 +10,19 @@ const Navbar = () => {
           <div className='justify-between'></div>
 
           <div className='flex justify-between p-2'>
+          <Link to="/">
             <div className='flex flex-row p-2'>
+            
               <div>
                 <DocumentTextIcon className='w-5 h-5 text-white'/>
               </div>
-              <div className='pl-1 text-xs self-center'>Articles</div>
+              <div className='pl-1 text-xs self-center text-white'>Articles</div>
+              
             </div>
-
+            </Link>
+            <Link to="https://github.com/feuvpi">
             <div className='flex flex-row p-2'>
+              
               <div>
                 <svg className="w-5 h-5" viewBox='0 0 128 128'>
                   <g fill='#ffffff'>
@@ -29,13 +35,18 @@ const Navbar = () => {
                   </g>
                 </svg>
               </div>
-              <div className='pl-1 text-xs self-center'>GitHub</div>
+              
+              <div className='pl-1 text-xs self-center text-white'>GitHub</div>
             </div>
+            </Link>
           </div>
+
           <div className='justify-between'>
+            <a href="mailto:freefloat6@gmail.com">
             <div>
-              <ChatAltIcon className='w-5 h-5'/>
+              <ChatAltIcon className='w-5 h-5 text-white'/>
             </div>
+            </a>
           </div>
         </div>
       </nav>

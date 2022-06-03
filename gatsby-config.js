@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `@feuvpi`,
+    title: `Articles`,
     author: {
       name: `Fred Vasquez,`,
       summary: `software developer and sound designer, writing about interesting stuff he have stumbled upon. `,
